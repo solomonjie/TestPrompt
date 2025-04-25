@@ -4,10 +4,10 @@
 **Inference Service:** ghcr.io/huggingface/text-embeddings-inference:cpu-1.7  
 **Support Model URL:** https://huggingface.co/docs/text-embeddings-inference/supported_models  
 
-# Test Via HttpRequest
+**Test Via HttpRequest**
 ![image](https://github.com/user-attachments/assets/527a6d14-e982-487b-b85e-4f68b1990e08)
 
-# Python Code:  
+**Python Code:** 
 You can install it via pip as pip install --upgrade --quiet huggingface_hub, and then run:
 ```
 from huggingface_hub import InferenceClient  
@@ -15,3 +15,27 @@ client = InferenceClient()
 embedding = client.feature_extraction("What is deep learning?", model="http://localhost:8080/embed")  
 print(embedding)
 ```
+
+# Install Vector Storage (Faiss)
+```
+pip install faiss-cpu
+```
+**Try Test Code**
+```
+import numpy as np
+d = 64                           # dimension
+nb = 100000                      # database size
+nq = 10000                       # nb of queries
+np.random.seed(1234)             # make reproducible
+xb = np.random.random((nb, d)).astype('float32')
+xb[:, 0] += np.arange(nb) / 1000.
+xq = np.random.random((nq, d)).astype('float32')
+xq[:, 0] += np.arange(nq) / 1000.
+
+import faiss                   # make faiss available
+index = faiss.IndexFlatL2(d)   # build the index
+print(index.is_trained)
+index.add(xb)                  # add vectors to the index
+print(index.ntotal)
+```
+![image](https://github.com/user-attachments/assets/1e694feb-4f74-48d8-bb18-d098c072c08b)
