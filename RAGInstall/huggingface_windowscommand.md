@@ -106,4 +106,24 @@ print(I) # Index ID, Specified By User
 ```
 ![image](https://github.com/user-attachments/assets/d7899959-78a9-421c-8a42-decd54fb7e67)
 
+**Build Prompt**
 
+Build ID - News Map
+```
+newsDic = {
+    1:news1,
+    2:news2,
+    3:news3
+}
+
+newsDic[I[0][0]]
+```
+![image](https://github.com/user-attachments/assets/ae1bb485-135b-4366-8821-b2cc85b48dfe)
+
+Insert Into Prompt Template
+
+No RAG Content
+![image](https://github.com/user-attachments/assets/ba96d9cd-36de-44c6-be16-91e467bb2773)
+
+Contain RAG Content
+![image](https://github.com/user-attachments/assets/c9b9bfb1-8c93-4992-98aa-4e5d74f5c756)
