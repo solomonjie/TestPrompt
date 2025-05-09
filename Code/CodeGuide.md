@@ -17,6 +17,7 @@ You are a senior developer, you are doing code review, you need consider followi
 3. Based on Picture, analyze user funnel
 
 ![image](https://github.com/user-attachments/assets/d1c882a3-7d1f-4975-92af-41e85a76c66b)
+
 4. git operation
 5. Prompt Structure
 6. PRD Generator
