@@ -11,3 +11,9 @@
 3. knowledge/memory,
 4. reasoning/evaluation
 5. planning/feedback.
+
+Agent需要解决的关键问题
+1. Agent - 已有接口和Infra 的交互。  MCP model context protocal。 需要解决的关键问题，数据权限，接口权限
+2. Agent - Agent 之间交流。google A2A protocal。 部分解决数据权限问题。 让特定agent 访问特定接口，然后只 expose 需要让另一个Agent 了解的内容。但是需要很好的设计单agent的数据相关权限。
+3. Agent - User Communication。目前来说 Agent 主动从用户获取输入然后返回结果给用户。目标是执行一点之后，主动提问题给用户，和用户交流获取反馈，然后继续执行。困难点就是问问题的时机 和 如何问问题。
+长远问题：Agent 如何自我学习。
