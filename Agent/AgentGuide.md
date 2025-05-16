@@ -5,12 +5,13 @@
 4. Autonomous agent: agent 接收到用户请求后，解释用户请求，制订计划，然后指定检查点，然后开始自动化的按照制订的计划进行执行。有可能执行到某些点后需要用户的确认和反馈，然后接受反馈对计划进行调正，然后继续执行。
 
 如果复杂任务可能需要多个Agent，这些agent一起工作来完成一个复杂问题。它们之间会有 agent 的交互问题。
-单Agent主要组件包括“
-1. profile/persona, Profile 和 Persona。它们 一般叫做 system prompt，主要是指导 agent 如何 完成任务，如何做反应等。比如包含用户的背景（程序员，作家），生理信息（性别，年纪）等。
-2. actions,
-3. knowledge/memory,
-4. reasoning/evaluation
-5. planning/feedback.
+
+单Agent主要组件包括
+1. profile/persona： Profile 和 Persona。它们 一般叫做 system prompt，主要是指导 agent 如何 完成任务，如何做反应等。比如包含用户的背景（程序员，作家），生理信息（性别，年纪）等。
+2. Actions：主要包含任务如何完成，如何创建任务，如何 communication，一些运行环境和运行的内部状态。主要和agent task的执行相关。
+3. knowledge/memory：用于优化prompt内容，减少token的使用和增强结果的效果。比如通过获取原来的问答内容，可以时大模型回答时返回高质量的答案。
+4. reasoning/evaluation。让agent仔细思考prompt的内容，并检查agent执行结果是否有问题，比如 初始启动等情况。
+5. planning/feedback. 将比较简单的任务组合起来完成更复杂的目标。用户可以监测planning，给出feedback 来修改planning。
 
 Agent需要解决的关键问题
 1. Agent - 已有接口和Infra 的交互。  MCP model context protocal。 需要解决的关键问题，数据权限，接口权限
